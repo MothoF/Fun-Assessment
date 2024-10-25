@@ -12,6 +12,21 @@ def dog_years():
     """
 
     #enter your code here
+    human_years = input("Input human years here: ")
+    human_years = int(human_years)
+    dogyears = 0
+
+    if human_years <= 20:
+        for year in range(1,human_years+1):
+            if year < 3:
+                dogyears += 10.5
+            else:
+                dogyears += 4
+        print(f"The dog's age in dog's years is {int(dogyears)}")
+    else:
+        print('\nHuman years must not exceed 20\n')
+        dog_years()
+#print(dog_years())
 
 def fizzbuzz(num):
     """
@@ -25,7 +40,19 @@ def fizzbuzz(num):
     """
 
     #enter your code here
+    output = ''
 
+    for number in range(1,num+1):
+        if number%3 == 0 and number%5 == 0:
+            output += 'FizzBuzz '
+        elif number%3 == 0:
+            output += 'Fizz '
+        elif number%5 == 0:
+            output += 'Buzz '
+        else:
+            output += str(number)+' '
+    return output.strip()
+print(fizzbuzz(15))
     
 
 def word_lengths(sentence):
@@ -41,6 +68,14 @@ def word_lengths(sentence):
     """
     
     #enter your code here
+    sentence_components = sentence.split()
+    output = {}
+
+    for component in sentence_components:
+        output[component] = len(component)
+    
+    return output
+print(word_lengths('Aunty Yankho is amazing'))
 
 def cube_sum(number):
     """
@@ -53,3 +88,15 @@ def cube_sum(number):
     """
     
     #enter your code here
+    string_number = str(number)
+    list_string_numbers = []
+    for string_num in string_number:
+        list_string_numbers.append(string_num)
+    cube__sum = 0
+
+    for num in list_string_numbers:
+        num = int(num)
+        cube__sum += num**3
+
+    return cube__sum
+print(cube_sum(123))
