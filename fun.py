@@ -52,7 +52,7 @@ def fizzbuzz(num):
         else:
             output += str(number)+' '
     return output.strip()
-print(fizzbuzz(15))
+#print(fizzbuzz(15))
     
 
 def word_lengths(sentence):
@@ -68,14 +68,17 @@ def word_lengths(sentence):
     """
     
     #enter your code here
-    sentence_components = sentence.split()
-    output = {}
+    if str(sentence).isdigit():
+        raise ValueError(f"{sentence} must be a string")
+    else:
+        sentence_components = sentence.split()
+        output = {}
 
-    for component in sentence_components:
-        output[component] = len(component)
-    
-    return output
-print(word_lengths('Aunty Yankho is amazing'))
+        for component in sentence_components:
+            output[component] = len(component)
+        
+        return output
+#print(word_lengths(125))
 
 def cube_sum(number):
     """
@@ -99,4 +102,4 @@ def cube_sum(number):
         cube__sum += num**3
 
     return cube__sum
-print(cube_sum(123))
+#print(cube_sum(123))
